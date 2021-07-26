@@ -1,4 +1,7 @@
 import styled  from 'styled-components';
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import TableCell from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
 
 export const Container = styled.div`
   width:100%;
@@ -11,10 +14,42 @@ export const AreaLayout = styled.div`
   padding-bottom: 20px;
 `;
 
+export const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor:'rgb(201 208 212);',
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+    backgroundColor:theme.palette.common.white,
+  },
+}))(TableCell);
+
+export const useStyles = makeStyles({
+  table: {
+    minWidth: 700,
+  },
+});
+
+export const StyledTableRow = withStyles((theme) => ({
+  root: {
+    "&:nth-of-type(odd)": {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+
 export const AreaButton = styled.div`
   width: 100%;
   display:flex;
   justify-content: space-between;
+`;
+
+export const ImageProduct = styled.img`
+  width:100%;
+  height:auto;
+  padding:2px;
+  box-shadow: 0 0 0.3em black;
 `;
 
 export const Button = styled.button`
