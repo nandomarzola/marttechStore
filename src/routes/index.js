@@ -11,7 +11,7 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/product" component={Product} />
+      <Route exact path="/product/:id" component={Product} />
       <Route exact path="/cart" component={Cart} />
 
       <Route exact path="/login" component={SingIn} />

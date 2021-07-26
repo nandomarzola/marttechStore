@@ -11,9 +11,10 @@ export const AreaLayout = styled.div`
 export const ShowCase = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
   width: 15%;
   margin-top: 20px;
-  box-shadow: 0 0 0.3em #000;
+  box-shadow: 0 0 0.1em #000;
    border-radius: 5px;
   cursor:pointer;
   &:hover{
@@ -31,6 +32,7 @@ export const Title = styled.a`
   color: #000;
   margin-top: 10px;
   font-family:Arial, Helvetica, sans-serif;
+  height:45px
 `;
 
 export const Value = styled.p`
