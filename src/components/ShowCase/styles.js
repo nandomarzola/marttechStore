@@ -8,7 +8,7 @@ export const AreaLayout = styled.div`
   justify-content: space-between;
 `;
 
-export const ShowCase = styled.div`
+export const ShowCase = styled.a`
   display: flex;
   flex-direction: column;
   padding-top: 10px;
@@ -19,6 +19,7 @@ export const ShowCase = styled.div`
   cursor:pointer;
   &:hover{
     box-shadow: 0 0 0.3em red;
+    opacity:1;
   }
 `;
 

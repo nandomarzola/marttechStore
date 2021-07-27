@@ -1,23 +1,29 @@
 import { Container, AreaLayout, ShowCase, Image, Title, Value } from "./styles";
 
-import produto1  from '../../assets/produto1.jpg';
-
-export default () => {
-
-  function handleProduct(id){
-    window.location = `product/${id}`;
+export default ({ loading, error, products }) => {
+  if (error) {
+    return <div>Algo de errado não está certo</div>;
   }
 
+  if (loading || products === null) {
+    return <div>Carregando...</div>;
+  }
+
+  if (products.length === 0) {
+    return <div>Nenhum resultado encontrado</div>;
+  }
   return (
     <Container>
       <AreaLayout>
-        <ShowCase>
-          <Image src={produto1} alt="Produto 1" />
-          <Title>
-            AWP | Descarga Elétrica FN Float 0.015 com Fallen Dourado
-          </Title>
-          <Value>R$ 1.825,00</Value>
-        </ShowCase>
+        {products.map((product) => (
+          <ShowCase key={product.id} href={`/product/${product.id}`}>
+            <Image src={product.imageShowCase} alt={product.name} />
+            <Title>
+              {product.name}
+            </Title>
+            <Value>R$ {product.unitary}</Value>
+          </ShowCase>
+        ))}
       </AreaLayout>
     </Container>
   );
