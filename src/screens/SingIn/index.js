@@ -7,7 +7,7 @@ import {
   AreaForms
 } from "./styles";
 
-import Register from "../../components/Register";
+import Register from "../../components/UI/Register";
 import Login from "../../components/Login";
 import MyAccount from "../../components/MyAccount";
 

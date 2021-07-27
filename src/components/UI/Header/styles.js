@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import fundo from "../../assets/marco-topo.png";
+import fundo from "../../../assets/marco-topo.png";
 
 export const Container = styled.div`
   width: 100%;

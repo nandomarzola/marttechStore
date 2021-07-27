@@ -12,7 +12,7 @@ import {
   Button,
 } from "./styles";
 
-import Input from '../../components/Input';
+import Input from '../UI/Input';
 
 export default () => {
   const history = useHistory();

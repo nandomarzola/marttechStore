@@ -1,6 +1,6 @@
 import { Container, AreaLayout, TitleShowCase } from "./styles";
 
-import SpotLight from "../../components/SpotLight";
+import SpotLight from "../../components/UI/SpotLight";
 import ShowCase from "../../components/ShowCase";
 
 export default () => {

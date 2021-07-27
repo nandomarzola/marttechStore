@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import footer from '../../assets/footer.jpg';
+import footer from '../../../assets/footer.jpg';
 
 export const Container = styled.div`
   width: 100%;

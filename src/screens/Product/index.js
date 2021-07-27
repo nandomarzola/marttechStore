@@ -11,7 +11,7 @@ import {
 } from "./styles";
 
 import FacaUrsus from "../../assets/facaUrsus.jpg";
-import Input from '../../components/Input';
+import Input from '../../components/UI/Input';
 
 export default () => {
   return (

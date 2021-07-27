@@ -11,7 +11,7 @@ import {
   Link
 } from "./styles";
 
-import Input from '../Input';
+import Input from '../UI/Input';
 
 export default () => {
   return (

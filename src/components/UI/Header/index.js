@@ -16,7 +16,7 @@ import {
 
 import Input from "../Input";
 
-import Logo from "../../assets/logo.png";
+import Logo from "../../../assets/logo.png";
 
 export default () => {
   return (

@@ -4,7 +4,7 @@ import  {
   Image
 } from './styles';
 
-import SpotLight from '../../assets/destaque.png';
+import SpotLight from '../../../assets/destaque.png';
 
 export default () => {
   return (
