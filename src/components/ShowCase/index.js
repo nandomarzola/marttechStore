@@ -1,8 +1,10 @@
 import { Container, AreaLayout, ShowCase, Image, Title, Value } from "./styles";
 
+import { formatPrice } from '../../util/format';
+
 export default ({ loading, error, products }) => {
   if (error) {
-    return <div>Algo de errado não está certo</div>;
+    return <div>Opss, algo deu errado</div>;
   }
 
   if (loading || products === null) {
@@ -21,7 +23,7 @@ export default ({ loading, error, products }) => {
             <Title>
               {product.name}
             </Title>
-            <Value>R$ {product.unitary}</Value>
+            <Value>R$ {formatPrice(product.unitary)}</Value>
           </ShowCase>
         ))}
       </AreaLayout>

@@ -1,3 +1,8 @@
+import { useState, useContext } from "react";
+
+import StoreContext from "../../Context/Context";
+import { useHistory } from "react-router-dom";
+
 import {
   Container,
   AreaLayout,
@@ -8,15 +13,53 @@ import {
   Button,
   AreaInputs,
   Label,
-  Link
+  Link,
+  Input,
 } from "./styles";
 
-import Input from '../UI/Input';
+function initialState() {
+  return { email: "", password: "" };
+}
+
+function login({ email, password }) {
+  if (email === "email@gmail.com" && password === "1234") {
+    return { token: "1234" };
+  }
+  return { error: "Usuário ou senha inválido" };
+}
 
 export default () => {
+  const [values, setValues] = useState(initialState);
+  const [error, setError] = useState(null);
+  const { setToken } = useContext(StoreContext);
+  const history = useHistory();
+
+  console.log(setToken);
+
+  function onChange(event) {
+    const { value, name } = event.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  }
+
+  function onSubmit(event) {
+    event.preventDefault();
+    const { token, error } = login(values);
+
+    if (token) {
+      setToken(token);
+      return history.push("/");
+    }
+    setError(error);
+    setValues(initialState);
+  }
+
   return (
     <Container>
-      <AreaLayout>
+      <AreaLayout onSubmit={onSubmit}>
         <AreaRegister>
           <TitleTop>
             <TitleTextTop>Já sou cliente.</TitleTextTop>
@@ -26,13 +69,26 @@ export default () => {
           </TextDescription>
           <AreaInputs>
             <Label>Seu e-mail</Label>
-            <Input type="text" />
+            <Input
+              id="email"
+              type="text"
+              name="email"
+              onChange={onChange}
+              value={values.email}
+            />
             <Label>Sua Senha</Label>
-            <Input type="password"/>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              onChange={onChange}
+              value={values.password}
+            />
             <Link>Esqueceu sua senha?</Link>
+            {error && <div>{error}</div>}
           </AreaInputs>
         </AreaRegister>
-        <Button>Continuar</Button>
+        <Button type="submit">Continuar</Button>
       </AreaLayout>
     </Container>
   );

@@ -4,10 +4,10 @@ import {
   Input
 } from './styles';
 
-export default ({type, style, value, disabled}) => {
+export default ({type, style}) => {
   return (
     <Container>
-      <Input type={type} style={style} value={value} disabled={disabled}/>
+      <Input type={type} style={style}  />
     </Container>
   )
 }
